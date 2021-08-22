@@ -1,0 +1,49 @@
+header{
+
+    width:70%;
+    height: 155px;    
+    background-color:#C06719;
+    margin: 10px auto	0px;
+
+}
+header h1{
+    display: inline-block;
+    margin-left: 150px;
+    margin-top: 50px;
+    position: absolute;
+    color: #303F9F;
+    font-size: 2em;
+    font-family: 'Righteous', cursive;
+    text-shadow:2px 4px 4px purple;			
+}
+
+	table { 
+		width: 100%; 
+		border-collapse: collapse; 
+	}
+	/* Zebra striping */
+	tr:nth-of-type(odd) { 
+		background: #eee; 
+	}
+	th { 
+		background: #333; 
+		color: white; 
+		font-weight: bold; 
+	}
+	td, th { 
+		padding: 6px; 
+		border: 1px solid #ccc; 
+		text-align: left; 
+	}
+footer{
+    width: 85%;
+    height: 50px;
+    color: #fff;
+    padding-top: 5px;
+    background: #000;
+    margin: 0px auto 5px;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    font-size: 1em;
+
+}
