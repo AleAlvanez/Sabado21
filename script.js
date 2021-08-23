@@ -1,11 +1,9 @@
 
-
         async function getProduct() {
             let url = "https://api.mercadolibre.com/trends/MLM"
             const resp = await fetch(url);
             const product = await resp.json();
             await cargarDatos(product);
-
         }
         
         async function cargarDatos(pro){
