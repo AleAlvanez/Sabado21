@@ -1,5 +1,5 @@
 
-        async function getProduct() {
+async function getProduct() {
             let url = "https://api.mercadolibre.com/sites/MLM/search?category=MLM1132"
             const resp = await fetch(url);
             const product = await resp.json();
@@ -28,10 +28,8 @@ for (let i = 1; i < 20; i++) {
     contenedor.innerHTML += producto
    
     products.appendChild(contenedor)   
-}
-           
+}  
         }
-        
         async function botonesCategorias() {
             let url = "https://api.mercadolibre.com/categories/MLM1132"
             const resp = await fetch(url);
@@ -42,8 +40,5 @@ for (let i = 1; i < 20; i++) {
             }
         }
         
-
-
-
 getProduct();
 botonesCategorias();
