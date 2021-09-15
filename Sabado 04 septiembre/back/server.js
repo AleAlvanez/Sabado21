@@ -1,9 +1,11 @@
 const express = require("express");
 const dotenv = require('dotenv');
-const db = require('./Cart/db');
+const db = require('./db/db');
 const midd = require('./middlewares/midd');
 const cors = require('cors');
 const app = express();
+const path = require('path');
+const router = express.Router();
 dotenv.config();
 
 
@@ -12,6 +14,9 @@ app.use(express.json());
 app.use(cors());
 app.use(midd.log);
 app.use(midd.limitador);
+
+
+app.use('/', router);
 
 app.listen(process.env.PORT, function () {
     console.log(`Servidor iniciado en http://${process.env.HOST}:${process.env.PORT}`);
@@ -27,6 +32,13 @@ if(err){
     next()
 }
 })
+
+
+
+router.get('/',function(req,res){
+    res.sendFile(path.join('C:\\Users\\HP\\Documents\\sabado21\\Sabado 04 septiembre\\front\\index.html'));
+  //__dirname : It will resolve to your project folder.
+});
 
 //Endpoint para obtener el Carrito
 app.get('/cart',cors(midd.corsOption),function (req, res) {
