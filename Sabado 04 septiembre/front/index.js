@@ -1,8 +1,12 @@
+const host = 'http://localhost'
+const port = 3000
+
+
 async function getProduct() {
-    let url = "https://api.mercadolibre.com/sites/MLM/search?category=MLM1132"
+    let url = `${host}:${port}/products`
     const resp = await fetch(url);
-    const product = await resp.json();
-    await cargarDatos(product);
+    const products = await resp.json();
+    await cargarDatos(products);
 }
 
 async function cargarDatos(pro){

@@ -6,6 +6,7 @@ const cors = require('cors');
 const app = express();
 const path = require('path');
 const router = express.Router();
+const axios = require('axios');
 dotenv.config();
 
 
@@ -39,6 +40,16 @@ router.get('/',function(req,res){
     res.sendFile(path.join('C:\\Users\\HP\\Documents\\sabado21\\Sabado 04 septiembre\\front\\index.html'));
   //__dirname : It will resolve to your project folder.
 });
+
+router.get('/products',async(req, res)=>{
+    try{
+        const products = await axios(`${process.env.URL}${process.env.CATEGORY}`)
+        res.status(200).send(products.data)
+    }catch(e){
+        console.error(e.message)
+        res.status(400).send({error: e.message})
+    }
+})
 
 //Endpoint para obtener el Carrito
 app.get('/cart',cors(midd.corsOption),function (req, res) {
@@ -91,3 +102,5 @@ app.delete('/cart/:id', function (req, res) {
     }
     res.send(db.respuesta);
 })
+
+
