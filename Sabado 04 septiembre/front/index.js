@@ -35,13 +35,15 @@ products.appendChild(contenedor)
 }
 
 async function getTrendsProduct() {
-    let url = "https://api.mercadolibre.com/trends/MLM/MLM1132"
+  let url = `${host}:${port}/trendsproducts`
+   // let url = "https://api.mercadolibre.com/trends/MLM/MLM1132"
     const resp1 = await fetch(url);
     const productT = await resp1.json();
     await cargarDatosT(productT);
 }
 
 async function cargarDatosT(pro){
+  let products = document.getElementById("trendsproducts");
      var tbody = document.querySelector('#prductosT tbody');
      //var boton = document.querySelector('#boton1 button');
      
@@ -70,7 +72,8 @@ getProduct();
 getTrendsProduct();
 
 async function getCart() {
-    const result = await fetch('http://localhost:3000/cart');
+ 
+    const result = await fetch(`${host}:${port}/cart`);
     const cart = await result.json();
     console.log(cart);  
 }
@@ -78,7 +81,7 @@ getCart()
 
 
 async function agregarProducto() {
-  await fetch('http://localhost:3000/cart', {
+  await fetch(`${host}:${port}/cart`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -87,7 +90,7 @@ async function agregarProducto() {
     });
 }
 async function eliminarProducto(id) {
-    await fetch('http://localhost:3000/cart/'+ id,{
+  await fetch(`${host}:${port}/cart`+ id,{
 		method:'DELETE',
 	}).then(() => {
      console.log('removed');

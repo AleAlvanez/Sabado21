@@ -51,6 +51,17 @@ router.get('/products',async(req, res)=>{
     }
 })
 
+router.get('/trendsproducts',async(req, res)=>{
+    try{
+        const products = await axios(`${process.env.URL_TRENDS}${process.env.CATEGORY}`)
+        res.status(200).send(products.data)
+    }catch(e){
+        console.error(e.message)
+        res.status(400).send({error: e.message})
+    }
+})
+
+
 //Endpoint para obtener el Carrito
 app.get('/cart',cors(midd.corsOption),function (req, res) {
     res.send(db.Cart)
