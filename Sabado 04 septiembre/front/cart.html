@@ -8,36 +8,50 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f93c79f961.js" crossorigin="anonymous"></script>
     <!------ Include the above in your HEAD tag ---------->
     <link rel="stylesheet" type="text/css" href="styles1.css">
+
 </head>
-<body margin-top: 20px>
-    <header class="bg-dark py-5">
-        <div class="text-center text-white">
-            <h1>Alex's Shop</h1>
-            <p class="lead fw-normal text-white-50 mb-0">El lugar donde realizas tus compras</p> 
-        </div>
-    </header>
-    <nav class="navbar navbar-expand-lg bg-black">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#!">HOME</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+<body>
+	<nav class="navbar navbar-expand-lg sticky-top bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Alex's Store</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav m-auto my-2 my-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="categories.html">Categorias</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="aboutus.html">
+                  Sobre Nosotros
+                </a>
+              </li>
+            </ul>
+			<a href="login.html">
+				 <span><i class="fas fa-user"></i></span>
+			</a>
+            <a href="cart.html">
+              <span class="cart"><i class="fas fa-shopping-cart"></i></span>
+            </a>
+            <form class="d-flex">
+              <input class="px-2 search" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn0" type="submit">Buscar</button>
+            </form>
             
+          </div>
         </div>
-        <div class="col-xl-4 col-lg-4 col-md-4">
-            <form action="#" class="search-header">
-                <div class="input-group w-100">
-                    <input type="text" class="form-control justify-content-center" placeholder="¿Que quieres a comprar hoy?">
-                    
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="submit">
-                        <i class="fa fa-search"></i> Buscar
-                      </button>
-                    </div>
-                </div>
-            </form> <!-- search-wrap .end// -->
-        </div>
-    </nav>
+      </nav>
 <div class="container">
 	<div class="row">
 		<div class="col-xs-8">
@@ -128,8 +142,12 @@
 		</div>
 	</div>
 </div>
-<footer class="py-4 bg-dark">
-    <div><p class="m-0 text-center text-white">Copyright &copy; Alexs Shop 2021</p></div>
-</footer>
+<footer class="page-footer font-small blue pt-4 bg-light">
+	<div class="container-fluid text-center text-md-left">
+   
+	<div class="footer-copyright text-center py-3">© 2021 Copyright
+	</div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 </html>
