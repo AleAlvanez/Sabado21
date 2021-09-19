@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f93c79f961.js" crossorigin="anonymous"></script>
+    <title>Ingreso</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Alex's Store</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav m-auto my-2 my-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="categories.html">Categorias</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="aboutus.html">
+                  Sobre Nosotros
+                </a>
+              </li>
+            </ul>
+			<a href="login.html">
+				 <span><i class="fas fa-user"></i></span>
+			</a>
+            <a href="cart.html">
+              <span class="cart"><i class="fas fa-shopping-cart"></i></span>
+            </a>
+            <form class="d-flex">
+              <input class="px-2 search" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn0" type="submit">Buscar</button>
+            </form>
+            
+          </div>
+        </div>
+      </nav>
+
+      <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname">
+        <input type="submit" value="Registrar">
+      </form>
+</body>
+</html>

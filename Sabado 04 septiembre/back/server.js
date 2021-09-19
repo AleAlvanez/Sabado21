@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require('dotenv');
+dotenv.config();
 const db = require('./db/db');
 const midd = require('./middlewares/midd');
 const cors = require('cors');
@@ -7,7 +8,11 @@ const app = express();
 const path = require('path');
 const router = express.Router();
 const axios = require('axios');
-dotenv.config();
+const sequelize = require('./conexion');
+const userView = require('./view/viewUsers')
+const productView = require('./view/viewProducts');
+const viewProducts = require("./view/viewProducts");
+
 
 
 //Middlelware
@@ -19,9 +24,21 @@ app.use(midd.limitador);
 
 app.use('/', router);
 
-app.listen(process.env.PORT, function () {
-    console.log(`Servidor iniciado en http://${process.env.HOST}:${process.env.PORT}`);
-});
+async function serverStart(){
+    try{
+        await sequelize.authenticate();
+        console.log('Conección estabilizada correctamente');
+        app.listen(process.env.PORT, function () {
+            console.log(`Sistema iniciado en http://${process.env.HOST}:${process.env.PORT}`);
+        });
+    } catch(e){
+        console.error(e.message);
+    }
+}
+
+serverStart();
+
+viewProducts(app)
 // manejador de errores
 app.use((err,req,res,next)=>{
 if(err){
