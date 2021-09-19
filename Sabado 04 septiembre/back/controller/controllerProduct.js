@@ -12,3 +12,9 @@ module.exports.readP = async () =>{
     let result = await response.readProducts()
     return result;
 }
+
+module.exports.deleteP = async (productId) =>{
+    let response= new modelProduct()
+    let result = await response.deleteProducts(productId)
+    return result;
+}
