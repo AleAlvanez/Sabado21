@@ -12,6 +12,7 @@ const sequelize = require('./conexion');
 const userView = require('./view/viewUsers')
 const productView = require('./view/viewProducts');
 const viewProducts = require("./view/viewProducts");
+const viewUsers = require("./view/viewUsers");
 
 
 
@@ -39,6 +40,7 @@ async function serverStart(){
 serverStart();
 
 viewProducts(app)
+viewUsers(app)
 // manejador de errores
 app.use((err,req,res,next)=>{
 if(err){
