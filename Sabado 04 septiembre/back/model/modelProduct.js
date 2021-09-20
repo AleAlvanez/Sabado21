@@ -14,13 +14,16 @@ module.exports = class Products{
         let result =  await sequelize.query("SELECT * FROM products");
         return result
     }
+    async updateProducts (campo,valorActualizado,idProducto){
+        let result =  await sequelize.query("UPDATE products SET "+campo+" = '"+valorActualizado+"' WHERE idProduct= "+idProducto);
+        return result
+    }
+
     async deleteProducts (idProducto){
         let result =  await sequelize.query("DELETE FROM products WHERE idProduct= "+idProducto);
         return result
     }
-
-
-    
+   
     async find(productId){
         let result = await sequelize.query("SELECT * FROM products WHERE id = "+ productId)
         return result;
