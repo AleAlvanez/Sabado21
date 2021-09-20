@@ -5,8 +5,8 @@ module.exports = class Products{
         this.product=product
     }
 
-    async createProducts (nombreP,precio,idCategoria){
-        let result =  await sequelize.query("INSERT INTO products (product,price,idCateg) VALUES ('"+nombreP+"',"+precio+","+idCategoria+")");
+    async createProducts (codigoP,nombreP,precio,idCategoria){
+        let result =  await sequelize.query("INSERT INTO products (idProduct,product,price,idCateg) VALUES ('"+codigoP+" ','"+nombreP+"',"+precio+","+idCategoria+")");
         return result
     }
 
@@ -14,13 +14,13 @@ module.exports = class Products{
         let result =  await sequelize.query("SELECT * FROM products");
         return result
     }
-    async updateProducts (campo,valorActualizado,idProducto){
-        let result =  await sequelize.query("UPDATE products SET "+campo+" = '"+valorActualizado+"' WHERE idProduct= "+idProducto);
+    async updateProducts (nameP,price,idCateg,idProducto){
+        let result =  await sequelize.query("UPDATE products SET product = '"+nameP+"',price = "+price+",idCateg ="+idCateg+" WHERE idProduct= '"+idProducto+"'");
         return result
     }
 
     async deleteProducts (idProducto){
-        let result =  await sequelize.query("DELETE FROM products WHERE idProduct= "+idProducto);
+        let result =  await sequelize.query("DELETE FROM products WHERE idProduct= '"+idProducto+"'");
         return result
     }
    
