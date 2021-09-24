@@ -3,7 +3,7 @@ const modelProduct = require('../model/modelProduct')
 module.exports.createP = async (product) =>{
 let producto = new modelProduct();
 //console.log(product.productName)
-let data = await producto.createProducts(product.codigoP,product.product,product.price,product.idCateg);
+let data = await producto.createProducts(product.idProduct,product.product,product.price,product.idCateg);
 
 }
 

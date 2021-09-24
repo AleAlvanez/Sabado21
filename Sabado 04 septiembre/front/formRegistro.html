@@ -1,78 +1,68 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" >
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/f93c79f961.js" crossorigin="anonymous"></script>
-    <title>Ingreso</title>
+  <meta charset="UTF-8">
+  <title>Formulario de registro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="./styleformRegistro.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg sticky-top bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">Alex's Store</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav m-auto my-2 my-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="categories.html">Categorias</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="aboutus.html">
-                  Sobre Nosotros
-                </a>
-              </li>
-            </ul>
-			<a href="login.html">
-				 <span><i class="fas fa-user"></i></span>
-			</a>
-            <a href="cart.html">
-              <span class="cart"><i class="fas fa-shopping-cart"></i></span>
-            </a>
-            <form class="d-flex">
-              <input class="px-2 search" type="search" placeholder="Buscar" aria-label="Search">
-              <button class="btn0" type="submit">Buscar</button>
-            </form>
-            
-          </div>
-        </div>
-      </nav>
 
-      <form>
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<h1>Registrate</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form action="#" method="post">
+					<input class="text" type="text" name="nameU" placeholder="Nombre(s)" required="">
+					<br>
+					<input class="text" type="text" name="lastnameU" placeholder="Primer Apellido" required="">
+					<br>
+					<input class="text" type="text" name="Username" placeholder="Username" required="">
+					<input class="text email" type="email" name="email" placeholder="Email" required="">
+					<input class="text" type="password" name="password" placeholder="Contraseña" required="">
+					<input class="text w3lpass" type="password" name="password" placeholder="Confirma Contraseña" required="">
+					<input class="text" type="text" name="phonenumber" placeholder="Numero de telefono" required="">
+					<div class="wthree-text">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="">
+							<span>Al registrarme acepto terminos y condiciones</span>
+						</label>
+						<div class="clear"> </div>
+					</div>
+					<input type="submit" value="Registrarse">
+				</form>
+				<p>¿Ya tienes una cuenta?<a href="login.html">¡Inicia sesión ahora!</a></p>
+			</div>
+		</div>
+		<!-- copyright -->
+		<div class="colorlibcopy-agile">
+			<p>© 2021  </p>
+		</div>
+		<!-- //copyright -->
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->
 
-        <label for="fname">Nombre:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-
-        <label for="lname">Primer Apellido:</label><br>
-        <input type="text" id="lname" name="lname"><br>
-
-        <label for="userI">Usuario:</label><br>
-        <input type="text" id="userI" name="userI"><br>
-
-        <label for="correoI">Correo electronico:</label><br>
-        <input type="email" id="correoI" name="correoI"><br>
-
-        <label for="passI">Contraseña:</label><br>
-        <input type="password" id="passI" name="passI"><br>
-
-        <label for="passC">Confirmar contraseña:</label><br>
-        <input type="password" id="passC" name="passC"><br>
-
-        <label for="numCel">Numero telefonico:</label><br>
-        <input type="text" id="numCel" name="numCel"><br>
-
-
-        <input type="submit" value="Registrar">
-      </form>
+<!-- partial -->
+  
 </body>
 </html>
