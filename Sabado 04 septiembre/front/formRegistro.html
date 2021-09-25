@@ -20,15 +20,15 @@
 		<h1>Registrate</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form action="#" method="post">
+				<form id="dataForm">
 					<input class="text" type="text" name="nameU" placeholder="Nombre(s)" required="">
 					<br>
 					<input class="text" type="text" name="lastnameU" placeholder="Primer Apellido" required="">
 					<br>
 					<input class="text" type="text" name="Username" placeholder="Username" required="">
 					<input class="text email" type="email" name="email" placeholder="Email" required="">
-					<input class="text" type="password" name="password" placeholder="Contraseña" required="">
-					<input class="text w3lpass" type="password" name="password" placeholder="Confirma Contraseña" required="">
+					<input class="text" type="password" name="password1" placeholder="Contraseña" required="">
+					<input class="text w3lpass" type="password" name="password2" placeholder="Confirma Contraseña" required="">
 					<input class="text" type="text" name="phonenumber" placeholder="Numero de telefono" required="">
 					<div class="wthree-text">
 						<label class="anim">
@@ -37,8 +37,9 @@
 						</label>
 						<div class="clear"> </div>
 					</div>
-					<input type="submit" value="Registrarse">
+					<input type="button" name="enviar" value="Enviar" onclick="enviarAlerta();">
 				</form>
+
 				<p>¿Ya tienes una cuenta?<a href="login.html">¡Inicia sesión ahora!</a></p>
 			</div>
 		</div>
@@ -63,6 +64,6 @@
 	<!-- //main -->
 
 <!-- partial -->
-  
+  <script src="formRegistro.js"></script>
 </body>
 </html>

@@ -9,8 +9,6 @@ const path = require('path');
 const router = express.Router();
 const axios = require('axios');
 const sequelize = require('./conexion');
-const userView = require('./view/viewUsers')
-const productView = require('./view/viewProducts');
 const viewProducts = require("./view/viewProducts");
 const viewUsers = require("./view/viewUsers");
 
@@ -80,6 +78,11 @@ router.get('/trendsproducts',async(req, res)=>{
     }
 })
 
+
+router.post('/user',async(req, res)=>{
+let params = req.body
+   
+})
 
 //Endpoint para obtener el Carrito
 app.get('/cart',cors(midd.corsOption),function (req, res) {
