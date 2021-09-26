@@ -18,6 +18,12 @@ async function enviarAlerta(){
         num_celular: telefono
     }
   // return user;
-  console.log(user);
-
+  let url = `${host}:${port}/user`
+  await fetch(url,{
+                method:'POST',
+                headers: {
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(user)
+            });
   }

@@ -79,11 +79,6 @@ router.get('/trendsproducts',async(req, res)=>{
 })
 
 
-router.post('/user',async(req, res)=>{
-let params = req.body
-   
-})
-
 //Endpoint para obtener el Carrito
 app.get('/cart',cors(midd.corsOption),function (req, res) {
     res.send(db.Cart)
