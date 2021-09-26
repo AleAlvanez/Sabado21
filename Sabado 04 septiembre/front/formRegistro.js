@@ -1,14 +1,23 @@
 const host = 'http://localhost'
 const port = 3000
 
-function enviarAlerta(){
-    let nombre = document.getElementsByName('nameU')[0].value;
-    let primerAp = document.getElementsByName('lastnameU')[0].value;
-    let usuario = document.getElementsByName('Username')[0].value;
-    let correo = document.getElementsByName('email')[0].value;
-    let password = document.getElementsByName('password1')[0].value;
-    let password_conf = document.getElementsByName('password2')[0].value;
-    let telefono = document.getElementsByName('phonenumber')[0].value;
-    
+async function enviarAlerta(){
+    nombre = document.getElementById('nameU').value;
+    primerAp = document.getElementById('lastnameU').value;
+    usuario = document.getElementById('Username').value;
+    correo = document.getElementById('email').value;
+    password = document.getElementById('password1').value;
+    password_conf = document.getElementById('password2').value;
+    telefono = document.getElementById('phonenumber').value;
+    user = {
+        usuario : usuario,
+        nombre : nombre,
+        primer_ap : primerAp,
+        correo : correo,
+        password : password,
+        num_celular: telefono
+    }
+  // return user;
+  console.log(user);
 
   }
