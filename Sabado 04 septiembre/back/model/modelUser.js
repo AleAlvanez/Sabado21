@@ -24,4 +24,22 @@ module.exports = class Users{
         let result =  await sequelize.query("DELETE FROM users WHERE usuario= '"+usuario+"'");
         return result
     }
+	
+	 async findUser(usuario){
+        let result = await sequelize.query("SELECT usuario,correo,nombre, primer_Ap ,num_celular FROM users WHERE usuario = '"+  usuario+"'")
+        let res = JSON.stringify(result)
+        let indicador= res.charAt(res.length-2)
+        return indicador;
+        /*
+        if(indicador > 0){
+            console.log("usuario existe")
+            
+            //MANDAR MENSAJE AL USUARIO DE QUE DEBE REGISTRARSE CON OTRO USUARIO
+        } else {
+            //console.log("Producto encontrado")
+            //DEJARLO QUE SE REGISTRE
+        }
+        */
+  
+    }
 }
