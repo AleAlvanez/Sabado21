@@ -29,8 +29,6 @@ const nuevoProducto = function(id,nombre,cantidad,precio){
     Id.cont++
 }
 
-
-
 const buscaProducto = function (id) {
     if(Cart.hasOwnProperty(id)){
         Cart[id].cantidad ++;

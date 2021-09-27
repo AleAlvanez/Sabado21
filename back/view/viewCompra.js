@@ -1,0 +1,58 @@
+const compraController = require('../controller/controllerCompra')
+const db = require('../db/db');
+module.exports=async (app)=>{
+
+    //READ
+    app.get('/cart',function (req, res) {
+        res.send(db.Cart)
+    });
+
+    /*app.post('/cart',midd.Autenticar, function (req, res) {
+    if (!req.body.id || !req.body.nombre || !req.body.cantidad || !req.body.precio) {
+        db.respuesta = {
+            codigo: 502,
+            error: true,
+            mensaje: 'Es indispensable enviar nombre y código del país'
+        }
+    } else {
+        if (db.buscaProducto(req.body.id)) {
+            db.respuesta = {
+                codigo: 200,
+                error: false,
+                mensaje: 'Producto añadido'
+                
+            }
+        } else {
+            db.nuevoProducto(req.body.id, req.body.nombre,req.body.cantidad,req.body.precio)
+            db.respuesta = {
+                codigo: 200,
+                error: false,
+                mensaje: '¨Producto Agregado'
+            }
+        }
+    }
+    res.send(db.respuesta)
+})
+
+
+
+app.delete('/cart/:id', function (req, res) {
+    if (db.borraProducto(req.params.id)) {
+            db.respuesta = {
+            codigo: 200,
+            error: false,
+            mensaje: 'Producto eliminado'
+        }
+    } else {
+        db.respuesta = {
+            codigo: 421,
+            error: true,
+            mensaje: 'Producto no existe'
+        }
+    }
+    res.send(db.respuesta);
+})
+*/
+
+
+}

@@ -1,16 +1,20 @@
 const express = require("express");
 const dotenv = require('dotenv');
 dotenv.config();
-const db = require('./db/db');
-const midd = require('./middlewares/midd');
+
+const midd = require('./Sabado 04 septiembre/back/middlewares/midd');
 const cors = require('cors');
 const app = express();
 const path = require('path');
 const router = express.Router();
 const axios = require('axios');
-const sequelize = require('./conexion');
-const viewProducts = require("./view/viewProducts");
-const viewUsers = require("./view/viewUsers");
+const sequelize = require('./Sabado 04 septiembre/back/conexion');
+const viewProducts = require("./Sabado 04 septiembre/back/view/viewProducts");
+const viewUsers = require("./Sabado 04 septiembre/back/view/viewUsers");
+const viewCompra = require("./Sabado 04 septiembre/back/view/viewCompra");
+const Openpay = require('openpay');
+
+var openpay = new Openpay('moiep6umtcnanql3jrxp','sk_3433941e467c4875b178ce26348b0fac');
 
 //Middlelware
 app.use(express.json());
@@ -42,6 +46,7 @@ serverStart();
 
 viewProducts(app)
 viewUsers(app)
+viewCompra(app);
 // manejador de errores
 app.use((err,req,res,next)=>{
 if(err){

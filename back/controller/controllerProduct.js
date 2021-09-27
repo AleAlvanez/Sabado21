@@ -23,3 +23,12 @@ module.exports.deleteP = async (productId) =>{
     let result = await response.deleteProducts(productId)
     return result;
 }
+
+module.exports.findP = async (productId) =>{
+    let response= new modelProduct()
+    let result = await response.find(productId)
+    return result;
+}
+
+
+

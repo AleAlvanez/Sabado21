@@ -57,16 +57,9 @@ async function cargarDatosT(pro){
              numCell.innerHTML= i;
              nameCell.innerHTML=pro[i].keyword;
              urlCell.innerHTML=pro[i].url;
-
-             //document.getElementById("boton"+i).innerHTML=pro[i].keyword;
-               //document.querySelector("#link"+i).href=pro[i].url;
-             //document.querySelector("#link"+i).href=pro[i].url;
-            
              tbody.appendChild(row);
          }
-
-        
-      }
+}
 
 getProduct();
 getTrendsProduct();
