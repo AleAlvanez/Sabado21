@@ -7,17 +7,171 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f93c79f961.js" crossorigin="anonymous"></script>
 
     <title>Alex´s Store</title>
+    <style>
+      
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+
+
+.navbar-brand{
+    font-size: 2rem;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    
+}
+
+.navbar-brand:hover{
+    color: lightslategrey;
+   
+}
+
+.nav-link{
+    margin-left: 10px;
+    margin-left: 10px;
+    color: black;
+    text-transform: uppercase;
+    
+}
+
+.nav-link:hover{
+    color: lightslategrey;
+}
+
+.search{
+    height: 40px;
+    width:80%;
+    border-radius: 60px;
+    outline: none;
+    border: 2px solid red;
+    margin-right: -35px;
+    
+}
+
+.btn0{
+    height: 40px;
+    width: 40%;
+    outline: none;
+    border:none;
+    background: red;
+    color: white;
+    font-weight: 700;
+    border-radius: 60px;
+
+}
+
+
+.btn1{
+    height: 45px;
+    width: 35%;
+    border:none;
+    outline: none;
+    background-color:whitesmoke;
+    font-weight: 700;
+    border-radius: 60px;
+}
+
+
+.cart{
+    margin: 1.2rem;
+}
+
+
+.table{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    margin: 0.5rem;
+}
+
+
+.tendencias{
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: 'robot';
+    color: black;
+}
+
+footer{
+    margin-top: 3rem;
+}
+
+
+.añadir-carrito{
+    padding: .2rem;
+    border-radius: 3px;
+    background-color: lightsteelblue
+}
+
+
+
+section{
+    padding-top: 10rem;
+}
+
+.facebook{
+    margin: .2rem;
+}
+
+.twitter{
+    margin: .2rem;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+#fondoError{
+        height: 500px;
+        background-image: url('https://www.4webs.es/blog/wp-content/uploads/2018/04/error-404-lego.jpg');
+        background-repeat:no-repeat;
+        background-position-x:center;
+        background-position-y:center;
+
+}
+    </style>
   </head>
 
 
-  <body>
+  <body id="fondoError">
 
     <nav class="navbar navbar-expand-lg sticky-top bg-light">
         <div class="container">
@@ -53,51 +207,9 @@
           </div>
         </div>
       </nav>
+      <p>El usuario que intentas agregar ya existe, intenta otro</p>
 
-      <div class="about-section">
-        <h1>Acerca de nosotros</h1>
-        <p>Este concepto busca llevar los juguetes de tendencia hasta la puerta de tu casa o hacer vender tus juguetes y ganar con nosotros</p>
-      </div>
-      
-      <h2 style="text-align:center">Nuestro Team</h2>
-      <div class="row">
-        <div class="column">
-          <div class="card">
-            <h2>Ale Alvarado</h2>
-            <div class="container">
-             
-              <img src="/front/pics/yo.jpg"  style="width:20%">
-              
-            </div>
-            <p class="title">CEO & Fundadora</p>
-              <p>Desarrolladora, tester y algo más</p>
-              <p>Contacto:</p>
-              <p>alita31@gmail.com</p>
-          </div>
-        </div>
-      
-        <div class="column">
-          <div class="card">
-            <h2>Mi equipo</h2>
-            
-            <div class="container">
-              <img src="/front/pics/equipo.JPG"  style="width:15%">
-              
-            </div>
-            <p class="title">Apoyo en desarrollo</p>
-              <p>Sin duda, agradezco a quienes me han apoyado, tanto compañeros como mentor e instructor tecnico</p>
-          </div>
-        </div>
-      </div>
-<footer class="page-footer font-small blue pt-4 bg-light">
-  <div class="container-fluid text-center text-md-left">
- 
-  <div class="footer-copyright text-center py-3">© 2021 Copyright
-  </div>
-</footer>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
-   
   </body>
 </html>

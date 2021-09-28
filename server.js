@@ -2,17 +2,18 @@ const express = require("express");
 const dotenv = require('dotenv');
 dotenv.config();
 
-const midd = require('./Sabado 04 septiembre/back/middlewares/midd');
+const midd = require('./back/middlewares/midd');
 const cors = require('cors');
 const app = express();
 const path = require('path');
 const router = express.Router();
 const axios = require('axios');
-const sequelize = require('./Sabado 04 septiembre/back/conexion');
-const viewProducts = require("./Sabado 04 septiembre/back/view/viewProducts");
-const viewUsers = require("./Sabado 04 septiembre/back/view/viewUsers");
-const viewCompra = require("./Sabado 04 septiembre/back/view/viewCompra");
+const sequelize = require('./back/conexion');
+const viewProducts = require("./back/view/viewProducts");
+const viewUsers = require("./back/view/viewUsers");
+const viewCompra = require("./back/view/viewCompra");
 const Openpay = require('openpay');
+const viewHome = require("./back/view/viewHome");
 
 var openpay = new Openpay('moiep6umtcnanql3jrxp','sk_3433941e467c4875b178ce26348b0fac');
 
@@ -43,7 +44,7 @@ async function serverStart(){
 }
 
 serverStart();
-
+viewHome(app)
 viewProducts(app)
 viewUsers(app)
 viewCompra(app);
@@ -62,7 +63,7 @@ if(err){
 
 
 router.get('/',function(req,res){
-    res.sendFile(path.join('C:\\Users\\HP\\Documents\\sabado21\\Sabado 04 septiembre\\front\\index.html'));
+    res.sendFile(path.join('C:\\Users\\HP\\Documents\\sabado21\\front\\index.html'));
   //__dirname : It will resolve to your project folder.
 });
 

@@ -2,8 +2,9 @@ const userController = require('../controller/controllerUser')
 const axios = require('axios');
 
 module.exports=async (app)=>{
-    app.get('/user/errorUser', async (req,res)=>{
-        res.render('error404')
+    app.get('/errorUser', async (req,res)=>{
+        res.redirect('http://127.0.0.1:5500/front/errorUser.html')
+        console.log("entro aqui")
     })
 
     app.post('/user',async(req,res)=>{
@@ -11,8 +12,7 @@ module.exports=async (app)=>{
          indicador = await axios(`${process.env.LOCAL}`+usuario.usuario)
          
         if (indicador.data > 0){
-            console.log("Deberia renderizarse")
-             res.render('error404');
+            res.redirect('http://localhost:3000/errorUser')
            
         } else 
         {
