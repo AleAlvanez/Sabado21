@@ -4,7 +4,7 @@ const modelUser = require('../model/modelUser')
 module.exports.createU = async (user) =>{
 let response = new modelUser();
 let data = await response.createUser(user.usuario,user.nombre,user.primer_ap,user.correo,user.password,user.num_celular);
-
+return data;
 }
 module.exports.readU = async () =>{
     let response = new modelUser();
@@ -24,7 +24,6 @@ module.exports.deleteU = async (usuario) =>{
 module.exports.findU = async (usuario) =>{
     let response= new modelUser()
     let result = await response.findUser(usuario)
-    //console.log("esto va en el controlador:"+result);
     return result;
 }
 
