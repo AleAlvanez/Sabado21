@@ -6,9 +6,15 @@ module.exports = class Users{
     }
 
     async createUser (usuario,nombre,primer_ap,correo,password,num_celular){
-        let result =  await sequelize.query("INSERT INTO users (usuario,nombre,primer_Ap,correo,pass_word,num_celular) VALUES ('"+
+        try{
+            let result =  await sequelize.query("INSERT INTO users (usuario,nombre,primer_Ap,correo,pass_word,num_celular) VALUES ('"+
         usuario+"','"+nombre+"','"+primer_ap+"','"+correo+"','"+password+"','"+num_celular+"')");
         return result
+        } catch(error){
+            console.log(error);
+            throw new Error ("SQL Error, usuario ya existe");
+        }
+        
     }
     async readUser(){
         let result =  await sequelize.query("SELECT * FROM users");

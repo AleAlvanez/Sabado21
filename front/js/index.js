@@ -10,7 +10,7 @@ async function getProduct() {
 }
 
 async function cargarDatos(pro){
-    let products = document.getElementById("products");
+    let products = document.getElementById("lista-productos");
 for (let i = 1; i < 22; i++) {
 var titulo = pro.results[i].title
 var contenedor = document.createElement("div");
