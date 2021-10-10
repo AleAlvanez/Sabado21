@@ -1,7 +1,7 @@
 const express = require("express");
 const dotenv = require('dotenv');
 dotenv.config();
-
+const cookieParser = require('cookie-parser');
 const midd = require('./back/middlewares/midd');
 const cors = require('cors');
 const app = express();
@@ -12,16 +12,14 @@ const sequelize = require('./back/conexion');
 const viewProducts = require("./back/view/viewProducts");
 const viewUsers = require("./back/view/viewUsers");
 const viewCompra = require("./back/view/viewCompra");
-const Openpay = require('openpay');
 const viewHome = require("./back/view/viewHome");
-
-var openpay = new Openpay('moiep6umtcnanql3jrxp','sk_3433941e467c4875b178ce26348b0fac');
+const loginView = require('./back/view/viewLogin');
 
 //Middlelware
 app.use(express.json());
 app.use(cors());
-app.use(midd.log);
-app.use(midd.limitador);
+app.use(cookieParser());
+
 
 app.use(express.static(__dirname + '/public'))
 app.set('view engine', 'ejs')
@@ -48,6 +46,7 @@ viewHome(app)
 viewProducts(app)
 viewUsers(app)
 viewCompra(app);
+loginView(app)
 // manejador de errores
 app.use((err,req,res,next)=>{
 if(err){
@@ -60,12 +59,6 @@ if(err){
 }
 })
 
-
-
-router.get('/',function(req,res){
-    res.sendFile(path.join('C:\\Users\\HP\\Documents\\sabado21\\front\\index.html'));
-  //__dirname : It will resolve to your project folder.
-});
 
 router.get('/products',async(req, res)=>{
     try{

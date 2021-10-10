@@ -1,6 +1,17 @@
 
 module.exports=async (app)=>{
-    app.get('/homeA', async (req,res)=>{
-        res.redirect('http://127.0.0.1:5500/front/index.html')
+    app.get('/', async (req,res)=>{
+        res.render('home')
+    })
+    app.get('/aboutUs', async (req,res)=>{
+        res.render('about')
+    })
+    
+    app.get('/categories', async (req,res)=>{
+        res.render('categories')
+    })
+    
+    app.get('/registerUser', async (req,res)=>{
+        res.render('formRegistro')
     })
 }
