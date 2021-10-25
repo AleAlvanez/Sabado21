@@ -147,9 +147,8 @@ class Carrito {
                 <td>
                     <input type="number" class="form-control cantidad" min="1" value=${producto.cantidad}>
                 </td>
-                <td id='subtotales'>${producto.precio * producto.cantidad}</td>
                 <td>
-                    <a href="#" class="borrar-producto fas fa-times-circle" style="font-size:30px" data-id="${producto.id}"></a>
+                    <a href="#" class="borrar-producto fas fa-times-circle" style="font-size:30px" data-id=btn_"${producto.id}"></a>
                 </td>
             `;
             listaCompra.appendChild(row);
@@ -191,14 +190,14 @@ class Carrito {
             })
         }
         else {
-            location.href = "compra.html";
+            location.href = "/checkOut";
         }
     }
 
     //Calcular montos
     calcularTotal(){
         let productosLS;
-        let total = 0, igv = 0, subtotal = 0;
+        let total = 0;
         productosLS = this.obtenerProductosLocalStorage();
         for(let i = 0; i < productosLS.length; i++){
             let element = Number(productosLS[i].precio * productosLS[i].cantidad);
@@ -206,12 +205,7 @@ class Carrito {
             
         }
         
-        igv = parseFloat(total * 0.18).toFixed(2);
-        subtotal = parseFloat(total-igv).toFixed(2);
-
-        document.getElementById('subtotal').innerHTML = "S/. " + subtotal;
-        document.getElementById('igv').innerHTML = "S/. " + igv;
-        document.getElementById('total').value = "S/. " + total.toFixed(2);
+        document.getElementById('total').value = "$ " + total.toFixed(2);
     }
 
     obtenerEvento(e) {

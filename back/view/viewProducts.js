@@ -7,6 +7,7 @@ module.exports=async (app)=>{
     });
     //READ
     app.get('/productsA',async(req,res)=>{
+        
         res.send(await productController.readP());
 });
 //UPDATE

@@ -6,9 +6,10 @@ module.exports = class loginModel {
         this.login = login;
     }
     async find (user){
-        let result = await sequelize.query("SELECT * FROM users WHERE usuario = '" + user.usuario + "'");
-        if (result[0].length > 0 && (await bcryptjs.compare(user.password, result[0][0].password))) {
-            if (user.usuario == result[0][0].user) {
+        let result = await sequelize.query("SELECT * FROM users WHERE [user] = '" + user.user + "'");
+        console.log("esto es result:"+result)
+        if (result[0].length > 0 && (await bcryptjs.compare(user.pass, result[0][0].password))) {
+            if (user.user == result[0][0].user) {
                 return result[0][0];
             } else {
                 return false;

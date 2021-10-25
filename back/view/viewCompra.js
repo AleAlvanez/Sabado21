@@ -7,6 +7,26 @@ module.exports=async (app)=>{
         res.send(db.Cart)
     });
 
+    app.post('/create-checkout-session', async (req, res) => {
+        const session = await stripe.checkout.sessions.create({
+          line_items: [
+            {
+              // TODO: replace this with the `price` of the product you want to sell
+              price: '{{PRICE_ID}}',
+              quantity: 1,
+            },
+          ],
+          payment_method_types: [
+            'card',
+          ],
+          mode: 'payment',
+          success_url: `http://${process.env.HOST}:${process.env.PORT}/success.html`,
+          cancel_url: `http://${process.env.HOST}:${process.env.PORT}/cancel.html`,
+        });
+      
+        res.redirect(303, session.url)
+      });
+
     /*app.post('/cart',midd.Autenticar, function (req, res) {
     if (!req.body.id || !req.body.nombre || !req.body.cantidad || !req.body.precio) {
         db.respuesta = {

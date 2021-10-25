@@ -16,7 +16,7 @@ module.exports = async (app) => {
 
     app.post('/login',async(req,res) => {
         let user = req.body;
-   
+        console.log("Esto es user"+ JSON.stringify(user))
         if(!user.user || !user.pass){
             res.render('login',{
                 alert: true,
@@ -62,4 +62,3 @@ module.exports = async (app) => {
 
     });
 };
-

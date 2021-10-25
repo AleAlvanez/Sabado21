@@ -14,6 +14,9 @@ const viewUsers = require("./back/view/viewUsers");
 const viewCompra = require("./back/view/viewCompra");
 const viewHome = require("./back/view/viewHome");
 const loginView = require('./back/view/viewLogin');
+const viewCheckout = require("./back/view/viewCheckout");
+const viewAdmin = require("./back/view/viewAdmin");
+//const stripe = require('stripe')('sk_test_IKYCHOAmUhC7IPTdaoVtO58D');
 
 //Middlelware
 app.use(express.json());
@@ -47,6 +50,9 @@ viewProducts(app)
 viewUsers(app)
 viewCompra(app);
 loginView(app)
+viewCheckout(app)
+viewAdmin(app)
+
 // manejador de errores
 app.use((err,req,res,next)=>{
 if(err){
