@@ -41,6 +41,7 @@
                                 <th scope="col">id</th>
                                 <th scope="col">Producto</th>
                                 <th scope="col">Precio</th>
+                                <th scope="col"> Acciones </th>
                               </tr>
                             </thead>
                             <tbody>
@@ -49,6 +50,9 @@
                                       <td><%=e.idProduct%></td>
                                       <td><%=e.product%></td>
                                       <td><%=e.price%></td>
+                                      <td> <input type="button" onclick="location.href='http://localhost:3000/editProduct/'+'<%=e.idProduct%>';" value="Editar" />
+                                        <input type="button" onclick="location.href='http://localhost:3000/deleteProduct/'+'<%=e.idProduct%>';" value="Borrar" />
+                                    </td>
                                     </tr>
                                   <% }) %>
                             </tbody>
