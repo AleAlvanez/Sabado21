@@ -27,27 +27,35 @@
 <%- include('./headerAdmin')-%>  
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Agregar Producto</p>
+                    <h1>Agregar producto</h1>
+    <form method="POST" action="/newProduct">
+        <div class="form-group">
+            <label for="idProduct">ID</label>
+            <input required id="idProduct" placeholder="ID del producto" class="form-control" type="text"
+                name="idProduct">
+        </div>
+        <div class="form-group">
+            <label for="product">Nombre</label>
+            <input required id="product" placeholder="Nombre del producto" class="form-control" type="text"
+                name="product">
+        </div>
+        <div class="form-group">
+            <label for="price">Precio</label>
+            <input required id="price" placeholder="Precio del producto" class="form-control" type="number"
+                name="price">
+        </div>
+        <div class="form-group">
+            <label for="idCateg">Id Categoria</label>
+            <input required id="idCateg" placeholder="Categoria del producto" class="form-control" type="number"
+                name="idCateg">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success">Guardar</button>
+            &nbsp;<a href="/homeAdmin" class="btn btn-primary">Volver</a>
+        </div>
+    </form>
       
-                    <form class="mx-1 mx-md-4" action="/homeAdmin/newProduct" method="POST">
-
-                          <input type="text" id="form3Example3c"  name="idProduct" class="form-control" />
-                          <label class="form-label" for="form3Example3c">Id</label>
-                    
-                          <input type="text" id="form3Example1c" name="product"  class="form-control" />
-                          <label class="form-label" for="form3Example1c">Nombre</label>
-                     
-                          <input type="number" id="form3Example1c" name="price" class="form-control" />
-                          <label class="form-label" for="form3Example1c">Precio</label>
-            
-                          <input type="number" id="form3Example3c"  name="idCateg" class="form-control" />
-                          <label class="form-label" for="form3Example3c">ID categoria</label>
-    
-                        <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
-           
-                          <button type="button" class="btn bg-primary" ><a href="/homeAdmin" class="link-light">Cancelar</a></button>
-                    </form>
+                
                 </div>
                 <!-- /.container-fluid -->
 

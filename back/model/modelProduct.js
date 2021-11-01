@@ -25,7 +25,8 @@ module.exports = class Products{
     }
    
     async find(productId){
-        let result = await sequelize.query("SELECT * FROM products WHERE id = "+ productId)
+        let result = await sequelize.query("SELECT * FROM products WHERE idProduct = '"+ productId+"'")
         return result;
     }
+
 }

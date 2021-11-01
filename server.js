@@ -19,6 +19,7 @@ const viewAdmin = require("./back/view/viewAdmin");
 //const stripe = require('stripe')('sk_test_IKYCHOAmUhC7IPTdaoVtO58D');
 
 //Middlelware
+app.use(express.urlencoded({extended:false  }))
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
