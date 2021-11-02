@@ -16,8 +16,11 @@ const viewHome = require("./back/view/viewHome");
 const loginView = require('./back/view/viewLogin');
 const viewCheckout = require("./back/view/viewCheckout");
 const viewAdmin = require("./back/view/viewAdmin");
-//const stripe = require('stripe')('sk_test_IKYCHOAmUhC7IPTdaoVtO58D');
+const mercadopago = require ('mercadopago');
 
+mercadopago.configure({
+    access_token: 'TEST-1439335977964475-101006-5e5f2bfca7618135f4aae591f8a558ba-315032284'
+  });
 //Middlelware
 app.use(express.urlencoded({extended:false  }))
 app.use(express.json());
