@@ -8,7 +8,7 @@ module.exports.isRegistred = async (req,res,next) =>{
             
             const decode = await promisify(jwt.verify)(req.cookies.jwt, process.env.SECRET_KEY)
             const data = decode.data;
-            let result = await sequelize.query("SELECT usuario,nombre,primer_Ap FROM users WHERE usuario ='"+ data.usuario+"'");
+            let result = await sequelize.query("SELECT [user],[name] FROM users WHERE user ='"+ data.user+"'")
             
             if(result){
                 req.user = data

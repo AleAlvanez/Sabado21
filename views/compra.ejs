@@ -23,6 +23,64 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg sticky-top bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="/">Alex's Store</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" 
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav m-auto my-2 my-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/categories">Categorias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/aboutUs">
+                Sobre Nosotros
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="/registerUser">
+                Ingresa
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <img src="pics/107831.png" class="nav-link dropdown-toggle img-fluid" height="40px"
+                      width="40px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false"></img>
+                      <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                        <table id="lista-carrito" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Imagen</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+  
+                        <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+                        <a href="/checkOut" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
+                            Compra</a>
+                    </div>
+            </li>
+          </ul>
+   
+         
+          <form class="d-flex">
+            <input class="px-2 search" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn0" type="submit">Buscar</button>
+          </form>
+          
+        </div>
+      </div>
+    </nav>
     <header>
         <div class="container">
             <div class="row justify-content-between mb-5">
@@ -44,61 +102,90 @@
             <div class="row mt-3">
                 <div class="col">
                     <h2 class="d-flex justify-content-center mb-3">Realizar Compra</h2>
-                    <form id="procesar-pago" action="#" method="post">
-                        <div class="form-group row">
-                            <label for="cliente" class="col-12 col-md-2 col-form-label h2">Cliente :</label>
-                            <div class="col-12 col-md-10">
-                                <input type="text" class="form-control" id="cliente"
-                                    placeholder="Ingresa nombre cliente" name="destinatario">
+                  <form class="row" action="/checkout" method="POST">
+            <!-- Start col -->
+            <div class="col-md-12 col-lg-12 col-xl-12">
+                <div class="card m-b-30">
+                    <div class="card-header">
+                        <h5 class="card-title">Cart</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10 col-xl-8">
+                                <div class="cart-container">
+                                    <div class="cart-head">
+                                        <div class="table-responsive">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">Action</th>                                               
+                                                        <th scope="col">Product</th>
+                                                        <th scope="col">Qty</th>
+                                                        <th scope="col">Price</th>
+                                                        <th scope="col" class="text-right">Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <% var sub = 0; %>
+                                                  <% for (var i = 0; i < data.length; i++) { %>
+                                                    <% var tot = (data[i].price *  data[i].cantidad);
+                                                        sub = sub + tot;
+                                                     %>
+                                                     
+                                                    <tr>
+                                                        <th scope="row"><%= i+1 %></th>
+                                                        <td><a href="#" class="text-danger"><i class="ri-delete-bin-3-line"></i></a></td>
+                                                        <td> <%= data[i].name %> </td>
+                                                        <input type="text" hidden value="<%= data[i].name %>" name="name">
+                                                        <td>
+                                                            <div class="form-group mb-0">
+                                                                <input type="text" class="form-control cart-qty" name="cartQty1" id="cartQty1" value="<%= data[i].cantidad %>" readonly>
+                                                                <input type="text" class="form-control cart-qty" name="qty" id="cartQty1" value="<%= data[i].cantidad %>" hidden>
+                                                            </div>
+                                                        </td>
+                                                        <td>$<%= data[i].price %></td>
+                                                        <input type="text" hidden value="<%= data[i].price %>" name="price">
+                                                        <td class="text-right">$ <%= tot.toFixed(2) %> </td>
+                                                    </tr>
+                                                  <%   } %>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="cart-body">
+                                        <div class="row">
+                                           
+                                            <div class="col-md-12 order-1 order-lg-2 col-lg-7 col-xl-6">
+                                                <div class="order-total table-responsive ">
+                                                    <table class="table table-borderless text-right">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Sub Total :</td>
+                                                                <td>$ <%= sub.toFixed(2) %> MXN</td>
+                                                            </tr>
+                
+                                                            <tr>
+                                                                <td class="f-w-7 font-18"><h4>Amount :</h4></td>
+                                                                <td class="f-w-7 font-18"><h4>$<%= sub.toFixed(2) %> MXN</h4></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cart-footer text-right">
+                                        <button type="submit" class="btn btn-success my-1">Proceder al pago</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="email" class="col-12 col-md-2 col-form-label h2">Correo :</label>
-                            <div class="col-12 col-md-10">
-                                <input type="text" class="form-control" id="correo" placeholder="Ingresa tu correo" name="cc_to">
-                            </div>
-                        </div>
-
-                        <div id="carrito" class="form-group table-responsive" >
-                            <table class="table" id="lista-compra" >
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Imagen</th>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Precio</th>
-                                        <th scope="col">Cantidad</th>
-                                        <th scope="col">Sub Total</th>
-                                        <th scope="col">Eliminar</th>
-                                    </tr>
-
-                                </thead>
-                                <tbody >
-
-                                </tbody>
-                                <tr>
-                                    <th colspan="4" scope="col" class="text-right">TOTAL :</th>
-                                    <th scope="col">
-                                        <input id="total" name="monto" class="font-weight-bold border-0" readonly style="background-color: white;"></input>
-                                    </th>
-                                    <!-- <th scope="col"></th> -->
-                                </tr>
-
-                            </table>
-                        </div>
-
-                        <div class="row justify-content-center" id="loaders">
-                            <img id="cargando" src="img/cargando.gif" width="220">
-                        </div>
-
-                        <div class="row justify-content-between">
-                            <div class="col-md-4 mb-2">
-                                <a href="/" class="btn btn-info btn-block">Seguir comprando</a>
-                            </div>
-                            <div class="col-xs-12 col-md-4">
-                                <button href="checkout.html" class="btn btn-success btn-block" id="procesar-compra">Realizar compra</button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
+                </div>
+            </div>
+            <!-- End col -->
+        </form>
 
 
                 </div>

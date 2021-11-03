@@ -19,7 +19,7 @@ const viewAdmin = require("./back/view/viewAdmin");
 const mercadopago = require ('mercadopago');
 
 mercadopago.configure({
-    access_token: 'TEST-1439335977964475-101006-5e5f2bfca7618135f4aae591f8a558ba-315032284'
+    access_token: 'TEST-2980369868037313-110301-30ad5bfab03219ebf8d5146d15241962-1010994273'
   });
 //Middlelware
 app.use(express.urlencoded({extended:false  }))

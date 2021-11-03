@@ -28,26 +28,30 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <h1>Editar usuario</h1>
-    <form method="POST" action="/editProduct">
+    <form method="POST" action="/editUser">
         <div class="form-group">
-            <label for="idProduct">ID</label>
-            <input  value="<%= dataE[0][0].idProduct %>"
-                name="idProduct" readonly="readonly">
+            <input  type= "hidden" value="<%= dataEU[0][0].id %>"
+                name="id" readonly="readonly">
         </div>
         <div class="form-group">
-            <label for="product">Nombre</label>
-            <input  value="<%= dataE[0][0].product %>"
-                name="product">
+            <label for="user">User</label>
+            <input  value="<%= dataEU[0][0].user %>"
+                name="user" readonly="readonly">
         </div>
         <div class="form-group">
-            <label for="price">Precio</label>
-            <input  value="<%= dataE[0][0].price %>"
-                name="price">
+            <label for="name">Nombre</label>
+            <input  value="<%= dataEU[0][0].name %>"
+                name="name">
         </div>
         <div class="form-group">
-            <label for="idCateg">Id Categoria</label>
-            <input  value="<%= dataE[0][0].idCateg %>"
-                name="idCateg">
+            <label for="email">Correo</label>
+            <input  value="<%= dataEU[0][0].email %>"
+                name="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Contrasenia</label>
+            <input  value="<%= dataEU[0][0].password %>"
+                name="password">
         </div>
         <div class="form-group">
             <button class="btn btn-success">Guardar Cambios</button>
@@ -66,7 +70,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; Alex Shop 2021</span>
                     </div>
                 </div>
             </footer>

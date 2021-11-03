@@ -13,7 +13,8 @@ module.exports.readU = async () =>{
 }
 module.exports.updateU = async (user) =>{
     let response = new modelUser();
-    let data = await response.updateUser(user.nombre,user.primer_ap,user.correo,user.password,user.num_celular,user.usuario);
+    let data = await response.updateUser(user.name,user.email,user.password,user.id);
+    return data;
     }
 
 module.exports.deleteU = async (usuario) =>{
@@ -21,9 +22,9 @@ module.exports.deleteU = async (usuario) =>{
     let result = await response.deleteUser(usuario)
     return result;
 }
-module.exports.findU = async (usuario) =>{
+module.exports.findU = async (id) =>{
     let response= new modelUser()
-    let result = await response.findUser(usuario)
+    let result = await response.findUser(id)
     return result;
 }
 

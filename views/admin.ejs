@@ -67,6 +67,7 @@
                                 <th scope="col">user</th>
                                 <th scope="col">name</th>
                                 <th scope="col">email</th>
+                                <th scope="col"> Acciones </th>
                               </tr>
                             </thead>
                             <tbody>
@@ -75,6 +76,9 @@
                                       <td><%=e.user%></td>
                                       <td><%=e.name%></td>
                                       <td><%=e.email%></td>
+                                      <td> <input type="button" onclick="location.href='http://localhost:3000/editUser/'+'<%=e.id%>';" value="Editar" />
+                                        <input type="button" onclick="location.href='http://localhost:3000/deleteUser/'+'<%=e.id%>';" value="Borrar" />
+                                    </td>
                                     </tr>
                                   <% }) %>
                             </tbody>
@@ -90,7 +94,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; Alex Shop 2021</span>
                     </div>
                 </div>
             </footer>

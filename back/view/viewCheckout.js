@@ -1,10 +1,4 @@
 
-module.exports=async (app)=>{
-    app.get('/checkOut', async (req,res)=>{
-        res.render('compra')
-    })
-}
-
 const mercadopago = require ('mercadopago');
 
 

@@ -20,7 +20,6 @@ module.exports=async (app)=>{
         }
     });
     app.get('/editProduct/:id', async (req,res)=>{
-        let product = req.body;
         const dataE =  await productController.findP(req.params.id)
         console.log(dataE[0][0])
         res.render('editProduct',{dataE: dataE})
@@ -45,7 +44,7 @@ module.exports=async (app)=>{
         }
         
     })
-/*
+
     app.get('/editUser/:id', async (req,res)=>{
         let product = req.body;
         const dataEU =  await userController.findU(req.params.id)
@@ -64,5 +63,5 @@ module.exports=async (app)=>{
         
 
     })
-    */
+
 }
