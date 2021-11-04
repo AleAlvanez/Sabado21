@@ -1,9 +1,3 @@
-CREATE DATABASE alexsshop
-GO
-USE alexsshop
-GO
-USE alexsshop
-GO
 CREATE TABLE categories (
 idCategory INT  NOT NULL IDENTITY(1,1),
 category VARCHAR (30) NOT NULL,
@@ -14,7 +8,7 @@ PRIMARY KEY (idCategory)
 GO
 
 CREATE TABLE products(
-idProduct INT NOT NULL IDENTITY(1,1),
+idProduct Varchar (6)  NOT NULL,
 product VARCHAR (50) NOT NULL,
 price DECIMAL NOT NULL,
 idCateg INT NOT NULL,
@@ -34,22 +28,27 @@ INSERT INTO categories (category) VALUES ('Peluches');
 GO
 INSERT INTO categories (category) VALUES ('Juegos de Mesa y Cartas');
 GO
-INSERT INTO products (idProduct,product,price) VALUES ('LIM90','Lego IronMan 300PZ',729);
+INSERT INTO products (idProduct,product,price,idCateg) VALUES ('LIM90','Lego IronMan 300PZ',729,1);
 GO
-INSERT INTO products (idProduct,product,price) VALUES ('LSP90','Lego Spiderman 300PZ',200);
+INSERT INTO products (idProduct,product,price,idCateg) VALUES ('LSP90','Lego Spiderman 300PZ',200,1);
 GO
 SELECT * FROM products;
 GO
- set dateformat dmy;
- GO
-CREATE TABLE users (
-usuario VARCHAR (40) NOT NULL,
-nombre VARCHAR (40) NOT NULL,
-primer_Ap VARCHAR (40) NOT NULL,
-correo VARCHAR (40) NOT NULL,
-pass_word VARCHAR (40) NOT NULL,
-num_celular VARCHAR (40) NOT NULL,
-fehca_registro Datetime Default GetDate() NOT NULL,
 
-PRIMARY KEY (usuario)
-);
+CREATE TABLE users (
+    id INT IDENTITY NOT NULL,
+    [user] varchar(50) NOT NULL,
+    [name] VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    [password] VARCHAR(255) NOT NULL,
+
+    PRIMARY KEY(id)
+)
+GO
+CREATE TABLE cartProducts (
+    id INT IDENTITY NOT NULL,
+    id_product VARCHAR(30) NOT NULL,
+    [name] VARCHAR(500) NOT NULL,
+    price FLOAT NOT NULL,
+    cantidad INT NOT NULL
+)
