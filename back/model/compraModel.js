@@ -1,5 +1,5 @@
 const { compareSync } = require('bcryptjs');
-const sequelize = require('./back/conexion');
+const sequelize = require('../conexion');
 
 
 module.exports = class compraModel{
@@ -39,7 +39,6 @@ module.exports = class compraModel{
 
             let result = await sequelize.query("SELECT * FROM cartProducts");
             if(result.length > 0){
-                // console.log(result[0])
                 return result[0];
             }
             else{

@@ -11,13 +11,13 @@ const axios = require('axios');
 const sequelize = require('./back/conexion');
 const viewProducts = require("./back/view/viewProducts");
 const viewUsers = require("./back/view/viewUsers");
-const viewCompra = require("./back/view/viewCompra");
 const viewHome = require("./back/view/viewHome");
 const loginView = require('./back/view/viewLogin');
 const viewCheckout = require("./back/view/viewCheckout");
 const viewAdmin = require("./back/view/viewAdmin");
 const viewRegister = require("./back/view/registerView");
 const mercadopago = require ('mercadopago');
+const compraView = require("./back/view/compraView")
 
 mercadopago.configure({
     access_token: 'TEST-2980369868037313-110301-30ad5bfab03219ebf8d5146d15241962-1010994273'
@@ -53,11 +53,11 @@ serverStart();
 viewHome(app)
 viewProducts(app)
 viewUsers(app)
-viewCompra(app);
 loginView(app)
 viewCheckout(app)
 viewAdmin(app)
 viewRegister(app)
+compraView(app)
 
 // manejador de errores
 app.use((err,req,res,next)=>{

@@ -22,7 +22,7 @@ imagen.setAttribute("src", pro.results[i].thumbnail);
 var titulo = pro.results[i].title.split(" ", 6);
 let producto = `
 <div class="card mb-4 shadow-sm" style="width: 18rem; margin-top: 20px;">
-  <form class="card-body" action="/checkout" method="POST">
+  <form class="card-body" action="/compra" method="POST">
  <div class="card-header">
  <h4 class="my-0 font-weight-bold">`+titulo[0]+` `+titulo[1]+` `+titulo[2]+`</h4>
     </div>

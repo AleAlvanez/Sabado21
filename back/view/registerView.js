@@ -1,6 +1,5 @@
 const registerController = require('../controller/registerController')
 
-
 module.exports = async (app) => {
 
     app.get('/register',async(req,res) => {

@@ -26,7 +26,7 @@ module.exports = async (app) => {
             items,
             back_urls: {
                 "success": "http://localhost:3000/",
-                "failure": "http://localhost:3000/cart",
+                "failure": "http://localhost:3000/compra",
                 "pending": "http://localhost:3000/"
             },
             auto_return: "approved",

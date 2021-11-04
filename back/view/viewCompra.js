@@ -1,4 +1,4 @@
-const compraController = require('../controller/controllerCompra')
+const compraController = require('../controller/compraController')
 const db = require('../db/db');
 module.exports=async (app)=>{
 
