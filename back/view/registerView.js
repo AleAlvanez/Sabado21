@@ -4,7 +4,7 @@ const registerController = require('../controller/registerController')
 module.exports = async (app) => {
 
     app.get('/register',async(req,res) => {
-        res.render('register');
+        res.render('formRegistro');
     });
 
     app.post('/register',async(req,res) => {

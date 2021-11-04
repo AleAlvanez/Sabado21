@@ -64,4 +64,12 @@ module.exports=async (app)=>{
 
     })
 
+    app.get('/deleteUser/:id',  async(req,res) => {
+        const data = await userController.deleteU(req.params.id);
+        if(data){
+            res.redirect('/homeAdmin')
+        }
+        
+    })
+
 }

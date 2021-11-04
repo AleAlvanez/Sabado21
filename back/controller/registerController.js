@@ -10,6 +10,6 @@ module.exports.register = async(user) => {
         return "usuario registrado"
     }
     else{
-        console.log(error);
+        console.log("ocurrio un error al registrar");
     }
 }

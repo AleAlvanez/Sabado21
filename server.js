@@ -16,6 +16,7 @@ const viewHome = require("./back/view/viewHome");
 const loginView = require('./back/view/viewLogin');
 const viewCheckout = require("./back/view/viewCheckout");
 const viewAdmin = require("./back/view/viewAdmin");
+const viewRegister = require("./back/view/registerView");
 const mercadopago = require ('mercadopago');
 
 mercadopago.configure({
@@ -56,6 +57,7 @@ viewCompra(app);
 loginView(app)
 viewCheckout(app)
 viewAdmin(app)
+viewRegister(app)
 
 // manejador de errores
 app.use((err,req,res,next)=>{

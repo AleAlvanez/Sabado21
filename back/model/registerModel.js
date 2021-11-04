@@ -1,15 +1,15 @@
-const sequelize = require('../back/conexion');
+const sequelize = require('../conexion')
+
 const bcryptjs = require('bcryptjs');
 
 module.exports = class registerModel{
     
     async register(user){
-        let passHash = await bcryptjs.hash(user.password, 8);
         let newUser = [
             user.user,
             user.name,
             user.email,
-            passHash
+            user.password
         ]
        try{
 
@@ -18,7 +18,7 @@ module.exports = class registerModel{
             return "Usuario registrado"
        }
        catch{
-            console.log("error");
+            console.log("ocurrio un error al registrar");
         }
 
     }
