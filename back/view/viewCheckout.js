@@ -3,6 +3,9 @@ const mercadopago = require ('mercadopago');
 
 
 module.exports = async (app) => {
+    app.get('/checkOut',  async(req,res) => {
+        res.render("checkout")
+    })
 
     app.post('/checkout',  async(req,res) => {
        

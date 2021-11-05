@@ -22,7 +22,6 @@ imagen.setAttribute("src", pro.results[i].thumbnail);
 var titulo = pro.results[i].title.split(" ", 6);
 let producto = `
 <div class="card mb-4 shadow-sm" style="width: 18rem; margin-top: 20px;">
-  <form class="card-body" action="/compra" method="POST">
  <div class="card-header">
  <h4 class="my-0 font-weight-bold">`+titulo[0]+` `+titulo[1]+` `+titulo[2]+`</h4>
     </div>
@@ -30,9 +29,8 @@ let producto = `
     <img src="`+pro.results[i].thumbnail+`" class="card-img-top">
     
     <h1 class="card-title pricing-card-title precio">$ <span class="">`+pro.results[i].price+`</span></h1>
-    <button type="submit" class="btn btn-block btn-primary agregar-carrito" data-id="btn_`+i+`" >Agregar al carrito </button>
-</div>
-</form>
+    <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="`+i+`">Comprar</a>
+    </div>
 </div>`;
 
 contenedor.innerHTML += producto
